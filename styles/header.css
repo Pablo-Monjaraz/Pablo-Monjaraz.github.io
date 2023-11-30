@@ -1,0 +1,253 @@
+/* Importación de la fuente 'Chakra Petch' desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,500;1,700&display=swap');
+
+/* Configuración de estilos generales */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Definición de variables de color y estilo global */
+:root {
+    --color-1: #ffffff;       /* Color blanco principal */
+    --color-2: #15141a3d;     /* Color oscuro para fondos */
+    --color-3: black;         /* Color negro */
+    --color-4: #15141a3d;     /* Otro tono oscuro para fondos */
+    --color-5: #1c1a32;       /* Color oscuro adicional */
+
+    --text-color-1: white;    /* Color del texto principal */
+    --text-color-2: #dbdfe9;  /* Color de texto secundario */
+    --border-radius-1: 5px;    /* Radio de borde común */
+    --height-text: 170%;      /* Altura del texto global */
+
+}
+
+/* Configuración de estilos para el documento HTML */
+html {
+    font-size: 16px;                /* Tamaño de fuente base para el documento */
+    font-family: 'Chakra Petch', sans-serif;  /* Fuente principal para el documento */
+    scroll-behavior: smooth;        /* Suaviza el desplazamiento en la página */
+}
+
+/* Configuración de estilos para el cuerpo del documento */
+body {
+    min-height: 100vh;              /* Establece la altura mínima del cuerpo como el 100% del alto de la ventana */
+    counter-reset: item;            /* Reinicia el contador 'item' */
+    counter-reset: section;         /* Reinicia el contador 'section' */
+
+    background-color: var(--color-5); /* Color de fondo principal */
+    overflow: hidden;               /* Oculta el desbordamiento de contenido fuera del cuerpo */
+}
+
+/* Estilos de la barra de desplazamiento en navegadores webkit (Chrome, Safari) */
+body::-webkit-scrollbar {
+    width: 7px;                    /* Ancho de toda la barra de desplazamiento */
+}
+body::-webkit-scrollbar-track {
+    background: transparent;       /* Color del área de seguimiento de la barra de desplazamiento */
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--color-1);   /* Color del control deslizante de la barra de desplazamiento */
+    border-radius: var(--border-radius-1);   /* Redondez del control deslizante de la barra de desplazamiento */
+}
+
+/* Solución para la animación: elementos inicialmente ocultos */
+.greeting_profile,
+.name_profile,
+.description_profile,
+.container_section_information,
+.conteiner_card_proyect,
+.container_subtitle_cards,
+.proyect_card,
+.item_menu,
+.container_logo,
+.container_lateral,
+.button_menu,
+.item_link_footer {
+    visibility: hidden;  /* Configura la visibilidad inicial de los elementos como oculta */
+}
+
+/* Estilos del encabezado (header) */
+.header {
+    width: 100%;                       /* Ocupa el 100% del ancho del contenedor padre */
+    padding: 15px 30px;                /* Añade espacio de relleno arriba y abajo, y a los lados */
+    display: flex;                     /* Utiliza un modelo de caja flexible para los elementos internos */
+    justify-content: space-between;    /* Distribuye los elementos en ambos extremos del contenedor */
+    align-items: center;                /* Centra verticalmente los elementos internos */
+    position: fixed;                   /* Fija la posición del encabezado en la parte superior de la ventana */
+    top: 0;                            /* Distancia desde la parte superior de la ventana */
+    left: 0;                           /* Distancia desde el lado izquierdo de la ventana */
+    z-index: 1;                        /* Establece el índice de apilamiento para que esté por encima de otros elementos */
+    backdrop-filter: blur(10px);        /* Aplica un filtro de desenfoque al fondo del encabezado */
+    transition: .3s linear;            /* Agrega una transición suave de 0.3 segundos con temporización lineal */
+}
+
+/* Estilos del contenedor de navegación */
+.container_navegation {
+    width: 50%;                        /* Establece el ancho del contenedor de navegación al 50% del ancho del encabezado */
+    min-width: 600px;                  /* Establece el ancho mínimo del contenedor de navegación */
+    max-width: 700px;                  /* Establece el ancho máximo del contenedor de navegación */
+}
+
+/* Estilos del menú de navegación */
+.menu ul {
+    list-style: none;                  /* Elimina la lista de viñetas */
+    display: flex;                     /* Utiliza un modelo de caja flexible para los elementos de la lista */
+    justify-content: space-around;     /* Distribuye los elementos de la lista de manera uniforme alrededor del contenedor */
+    align-items: center;                /* Centra verticalmente los elementos de la lista */
+}
+/* Estilos de los elementos de la lista del menú de navegación */
+.menu ul li {
+    counter-increment: item 1;   /* Incrementa el contador 'item' en 1 para cada elemento de la lista */
+}
+/* Estilos de los enlaces del menú y del botón del currículum/resumen */
+.item_menu_link,
+.button_cv_resumen {
+    text-decoration: none;        /* Elimina la decoración de subrayado de los enlaces y botones */
+    color: var(--text-color-1);   /* Color de texto principal */
+    text-transform: capitalize;   /* Transforma el texto a mayúsculas solo para la primera letra de cada palabra */
+    font-weight: 500;             /* Peso de la fuente regular */
+    transition: .3s ease;         /* Agrega una transición suave de 0.3 segundos */
+}
+/* Estilos del contador antes del enlace del menú */
+.item_menu_link::before {
+    content: "0" counter(item) "."; /* Muestra el contador 'item' precedido por "0" y seguido por un punto */
+    margin-right: 5px;             /* Agrega un margen a la derecha del contador */
+    color: var(--color-1);         /* Color del contador */
+}
+/* Cambios en el color al pasar el cursor sobre los enlaces del menú */
+.item_menu_link:hover {
+    color: var(--color-1);         /* Cambia el color al pasar el cursor sobre el enlace */
+}
+
+/* Estilos del botón del currículum/resumen */
+.button_cv_resumen {
+    padding: 10px;                 /* Añade espacio interno al botón */
+    border: 2px solid var(--color-1); /* Establece un borde sólido con el color principal */
+    border-radius: 5px;            /* Agrega bordes redondeados */
+    color: var(--color-1);         /* Color del texto del botón */
+    font-weight: 700;              /* Peso de la fuente en negrita */
+    transition: .5s ease-in-out;   /* Agrega una transición suave de 0.5 segundos con temporización ease-in-out */
+}
+/* Cambios en el fondo al pasar el cursor sobre el botón del currículum/resumen */
+.button_cv_resumen:hover {
+    background-color: var(--color-2); /* Cambia el fondo al pasar el cursor sobre el botón */
+}
+
+/* Estilos del logo */
+/* Contenedor del logo */
+.container_logo {
+    width: 70px;       /* Establece el ancho del contenedor del logo */
+    min-width: 50px;   /* Establece el ancho mínimo del contenedor del logo */
+    z-index: 1;        /* Establece el índice de apilamiento para que esté por encima de otros elementos */
+}
+/* Imagen del logo dentro del contenedor */
+.container_logo img {
+    width: 100%;       /* Hace que la imagen del logo ocupe el 100% del ancho del contenedor */
+}
+/* Estilos responsivos para dispositivos con un ancho de pantalla máximo de 768px (típicamente dispositivos móviles) */
+@media screen and (max-width: 768px) {
+    .container_logo {
+        width: 50px;   /* Redefine el ancho del contenedor del logo para pantallas más pequeñas */
+        min-width: 40px; /* Redefine el ancho mínimo del contenedor del logo para pantallas más pequeñas */
+    }
+}
+
+
+/* Estilos de los laterales */
+/* Contenedor lateral general */
+.container_lateral {
+    padding: 0px 30px;       /* Añade espacio de relleno arriba y abajo, y a los lados del contenedor */
+    position: fixed;         /* Fija la posición del contenedor lateral */
+    bottom: 0;               /* Lo posiciona en la parte inferior de la ventana */
+}
+/* Línea vertical decorativa en el contenedor lateral */
+.container_lateral::after {
+    content: "";             /* Agrega contenido pseudo-elemento ::after */
+    width: 2px;              /* Establece el ancho de la línea vertical */
+    height: 100px;           /* Establece la altura de la línea vertical */
+    display: block;          /* Hace que el contenido sea un bloque para que ocupe espacio en el contenedor */
+    background-color: var(--color-1); /* Color de la línea vertical */
+    margin: 0 auto;          /* Centra la línea vertical horizontalmente en el contenedor */
+}
+/* Estilos de los enlaces en el contenedor lateral */
+.container_lateral a {
+    color: var(--text-color-2); /* Color de texto predeterminado */
+    text-decoration: none;      /* Elimina la decoración de subrayado de los enlaces */
+    transition: .3s ease;       /* Agrega una transición suave de 0.3 segundos */
+}
+/* Cambios en el color al pasar el cursor sobre los enlaces en el contenedor lateral */
+.container_lateral a:hover {
+    color: var(--color-1);      /* Cambia el color al pasar el cursor sobre el enlace */
+}
+/* Lista no ordenada en el contenedor lateral */
+.container_lateral ul {
+    list-style: none;           /* Elimina la lista de viñetas */
+}
+/* Estilos de los elementos de la lista en el contenedor lateral */
+.container_lateral ul li {
+    margin: 15px 0px;           /* Añade espacio entre cada elemento de la lista */
+    transition: .3s ease;       /* Agrega una transición suave de 0.3 segundos */
+}
+/* Cambios en la posición al pasar el cursor sobre los elementos de la lista en el contenedor lateral */
+.container_lateral ul li:hover {
+    transform: translateY(-5px); /* Desplaza hacia arriba al pasar el cursor sobre el elemento de la lista */
+}
+
+/* Estilos específicos para el lado izquierdo del contenedor lateral */
+.side_izq {
+    left: 0;                   /* Coloca el contenedor lateral en el lado izquierdo de la ventana */
+}
+/* Estilos específicos para el lado derecho del contenedor lateral */
+.side_der {
+    right: 0;                  /* Coloca el contenedor lateral en el lado derecho de la ventana */
+}
+/* Estilos adicionales para los enlaces en el lado derecho del contenedor lateral */
+.side_der a {
+    margin-bottom: 15px;       /* Añade espacio inferior a los enlaces en el lado derecho */
+    writing-mode: vertical-lr; /* Establece el modo de escritura vertical para los enlaces */
+    letter-spacing: .1rem;     /* Añade espaciado entre letras para mejorar la legibilidad */
+}
+
+/* Estilos del correo electrónico del autor */
+.email_author {
+    font-size: 1.1rem;          /* Establece el tamaño de fuente del correo electrónico */
+    transition: .3s ease;       /* Agrega una transición suave de 0.3 segundos */
+}
+/* Cambios en la posición al pasar el cursor sobre el correo electrónico del autor */
+.email_author:hover {
+    transform: translateY(-5px); /* Desplaza hacia arriba al pasar el cursor sobre el correo electrónico */
+}
+
+
+/* Estilos del botón de menú responsive */
+/* Contenedor del botón de menú responsive */
+.container_button_menu_responsive {
+    display: none;   /* Inicialmente oculta el contenedor del botón de menú responsive */
+}
+
+/* Estilos del botón de menú */
+.button_menu {
+    background: none;  /* Sin fondo */
+    border: none;      /* Sin borde */
+    color: var(--text-color-1); /* Color de texto principal */
+    position: relative; /* Posición relativa para el posicionamiento del menú desplegable */
+    cursor: pointer;   /* Indica que el elemento es interactivo con el cursor */
+}
+
+/* Estilos cuando el menú está activo */
+.active_header {
+    transform: translateY(0%); /* Desplaza el menú hacia abajo */
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.75); /* Agrega una sombra al menú cuando está activo */
+}
+
+/* Estilos cuando el menú está desactivado */
+.desactive_header {
+    transform: translateY(-110%); /* Desplaza el menú hacia arriba (fuera de la vista) */
+}
+
+/* Estilos para ocultar la sombra del menú */
+.ocultar_box_shadow {
+    box-shadow: none; /* Elimina la sombra del menú */
+}

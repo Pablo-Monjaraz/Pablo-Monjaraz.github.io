@@ -1,0 +1,142 @@
+/* Media queries para la respuesta del diseño a diferentes tamaños de pantalla */
+
+/* Para pantallas con un ancho máximo de 1200px */
+@media screen and (max-width: 1200px) {
+    /* Ajustes específicos para pantallas medianas en el área principal */
+    #main {
+        padding: 0px 150px;     /* Ajusta el relleno del área principal */
+    }
+    .card_details {
+        font-size: .9rem;       /* Ajusta el tamaño de fuente en las tarjetas de detalles */
+    }
+}
+
+/* Para pantallas con un ancho máximo de 992px */
+@media screen and (max-width: 992px) {
+    /* Ajustes específicos para pantallas medianas en el área principal */
+    #main {
+        padding: 0px 100px;     /* Ajusta el relleno del área principal */
+    }
+}
+
+/* Para pantallas con un ancho máximo de 800px */
+@media screen and (max-width: 800px) {
+    /* Ajustes específicos para pantallas pequeñas en el diseño de tarjetas */
+    .container_cards {
+        grid-template-columns: repeat(2, 1fr); /* Ajusta las columnas del diseño de tarjetas */
+    }
+    .text_title_section::after {
+        width: 100%;           /* Ajusta el ancho del pseudo-elemento ::after en el título de la sección */
+        bottom: 10px;          /* Ajusta la posición inferior del pseudo-elemento */
+        left: 0;               /* Ajusta la posición izquierda del pseudo-elemento */
+    }
+    #contactos .container_description_section {
+        grid-template-columns: 1fr; /* Ajusta las columnas del diseño de la sección de contactos */
+        width: 100%;                /* Ajusta el ancho de la sección de contactos */
+        margin: 0 auto;             /* Centra la sección de contactos horizontalmente */
+    }
+}
+
+/* Para pantallas con un ancho máximo de 768px */
+@media screen and (max-width: 768px) {
+    /* Ajustes específicos para pantallas pequeñas en el área principal */
+    #main {
+        padding: 0px 50px;       /* Ajusta el relleno del área principal */
+    }
+    .container_lateral {
+        display: none;           /* Oculta el contenedor lateral */
+    }
+    .container_links_footer {
+        display: block;          /* Muestra los enlaces del pie de página */
+    }
+
+    /* Estilos específicos del encabezado para pantallas más pequeñas */
+    .container_navegation {
+        width: 100%;             /* Ajusta el ancho del contenedor de navegación */
+        min-width: 200px;        /* Establece el ancho mínimo del contenedor de navegación */
+        max-width: none;         /* Elimina el ancho máximo del contenedor de navegación */
+        position: fixed;         /* Fija la posición del contenedor de navegación */
+        right: 0;                /* Posición en el lado derecho de la ventana */
+        top: 0;                  /* Posición en la parte superior de la ventana */
+
+        backdrop-filter: blur(10px); /* Aplica un filtro de desenfoque al fondo del contenedor de navegación */
+        transform: translateX(100%); /* Desplaza el contenedor de navegación fuera de la vista */
+        transition: .3s linear;   /* Agrega una transición suave de 0.3 segundos */
+    }
+}
+
+
+
+/* Media queries para la respuesta del diseño a diferentes tamaños de pantalla */
+/* Para pantallas con un ancho máximo de 768px */
+@media screen and (max-width: 768px) {
+    /* Estilos específicos cuando el menú está activo */
+    .active_button_menu {
+        transform: translateX(0%); /* Desplaza el menú hacia la derecha */
+    }
+    .menu ul {
+        width: 50%;                  /* Ajusta el ancho del menú desplegable al 50% del ancho de la pantalla */
+        height: 100vh;               /* Ajusta la altura del menú desplegable al 100% del alto de la pantalla */
+        flex-direction: column;      /* Cambia la dirección del diseño a columna para el menú desplegable */
+        justify-content: center;     /* Centra los elementos verticalmente en el menú desplegable */
+        margin-left: auto;           /* Mueve el menú desplegable hacia la derecha del contenedor */
+        background-color: var(--color-2); /* Establece el color de fondo del menú desplegable */
+    }
+    .menu ul li {
+        margin: 25px 0px;            /* Ajusta el margen de los elementos del menú desplegable */
+    }
+    .item_menu_link::before {
+        display: block;              /* Hace visible el pseudo-elemento ::before en los enlaces del menú desplegable */
+        text-align: center;          /* Centra el texto del pseudo-elemento ::before en los enlaces del menú desplegable */
+        margin-right: 0;             /* Establece el margen derecho del pseudo-elemento ::before en los enlaces del menú desplegable */
+        margin-bottom: 3px;          /* Establece el margen inferior del pseudo-elemento ::before en los enlaces del menú desplegable */
+    }
+    .container_button_menu_responsive {
+        display: block;              /* Hace visible el contenedor del botón de menú responsive */
+    }
+}
+
+/* Para pantallas con un ancho máximo de 650px */
+@media screen and (max-width: 650px) {
+    /* Ajustes específicos para pantallas pequeñas en la sección de descripción */
+    .container_description_section {
+        grid-template-columns: 1fr;  /* Ajusta las columnas del diseño de la sección de descripción */
+    }
+
+    /* Ajustes específicos para pantallas pequeñas en las tarjetas de proyectos */
+    .conteiner_card_proyect {
+        grid-template-columns: 1fr;  /* Ajusta las columnas del diseño de las tarjetas de proyectos */
+    }
+    .img_effect_proyect {
+        width: 100%;                 /* Ajusta el ancho de la imagen en las tarjetas de proyectos */
+    }
+    .description_card_proyect {
+        margin-top: 10px;            /* Ajusta el margen superior en la descripción de las tarjetas de proyectos */
+    }
+    .conteiner_card_proyect:nth-child(odd) .img_card_proyect {
+        left: 0px;                   /* Ajusta la posición izquierda de las imágenes en las tarjetas de proyectos impares */
+    }
+    .conteiner_card_proyect:nth-child(even) .img_card_proyect {
+        order: 0;
+        left: 0px;                   /* Ajusta la posición izquierda de las imágenes en las tarjetas de proyectos pares */
+    }
+    .conteiner_card_proyect:nth-child(odd) .description_card_proyect {
+        left: 0px;                   /* Ajusta la posición izquierda de las descripciones en las tarjetas de proyectos impares */
+    }
+    .conteiner_card_proyect:nth-child(even) .description_card_proyect {
+        left: 0px;                   /* Ajusta la posición izquierda de las descripciones en las tarjetas de proyectos pares */
+    }
+}
+
+/* Para pantallas con un ancho máximo de 560px */
+@media screen and (max-width: 560px) {
+    /* Ajustes específicos para pantallas más pequeñas en las tarjetas de proyectos */
+    .container_cards {
+        grid-template-columns: 1fr;  /* Ajusta las columnas del diseño de las tarjetas de proyectos */
+    }
+
+    /* Ajustes específicos para pantallas más pequeñas en el menú */
+    .menu ul {
+        width: 100%;                 /* Ajusta el ancho del menú */
+    }
+}

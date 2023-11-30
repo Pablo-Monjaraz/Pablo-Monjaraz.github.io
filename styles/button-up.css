@@ -1,0 +1,35 @@
+#button-up {
+    /* Estilos base del botón */
+    width: 60px; /* Ancho del botón */
+    height: 60px; /* Altura del botón */
+    display: flex; /* Usa un modelo de caja flexible para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido del botón */
+    align-items: center; /* Centra verticalmente el contenido del botón */
+    border-radius: 50%; /* Aplica un borde redondeado, dando una forma circular */
+    font-size: 20px; /* Tamaño de fuente del contenido del botón */
+    position: fixed; /* Fija la posición del botón en la ventana del navegador */
+    bottom: 50px; /* Distancia desde la parte inferior de la ventana */
+    right: 10%; /* Distancia desde el lado derecho de la ventana */
+    cursor: pointer; /* Cambia el cursor del mouse a una mano, indicando interactividad */
+    border: 4px solid transparent; /* Borde inicialmente transparente */
+    transition: all 300ms ease; /* Transición suave de 300 milisegundos en todas las propiedades que cambian */
+    transform: scale(0); /* Inicialmente, el botón está invisible al establecer una escala de 0 */
+}
+
+#button-up:hover {
+    /* Efecto de escala y cambio de color al pasar el cursor sobre el botón */
+    transform: scale(1.1); /* Aumenta el tamaño del botón en estado hover */
+    border-color: rgb(255, 255, 255); /* Cambia el color del borde a blanco en estado hover */
+}
+
+/* Estilos responsivos para dispositivos con un ancho de pantalla máximo de 768px (típicamente dispositivos móviles) */
+@media screen and (max-width: 768px) {
+    #button-up {
+        /* Modifica el tamaño y la posición del botón para dispositivos móviles */
+        width: 40px; /* Ancho reducido */
+        height: 40px; /* Altura reducida */
+        font-size: 16px; /* Tamaño de fuente reducido */
+        bottom: 20px; /* Nueva posición desde la parte inferior */
+        right: 5%; /* Nueva posición desde el lado derecho */
+    }
+}

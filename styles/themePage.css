@@ -1,0 +1,122 @@
+/* Estilos para las animaciones de los círculos */
+/* Contenedor principal */
+.area {
+    background: #151515; /* Color de fondo */
+    width: 100%; /* Ancho completo */
+    height: 100vh; /* Alto total de la ventana */
+    overflow: hidden; /* Oculta el desbordamiento */
+    position: absolute; /* Posicionamiento absoluto */
+    top: 0; /* En la parte superior */
+    left: 0; /* A la izquierda */
+}
+
+/* Contenedor de los círculos */
+.circles {
+    position: absolute; /* Posición absoluta */
+    top: 0; /* En la parte superior */
+    left: 0; /* A la izquierda */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto total de la ventana */
+    overflow: hidden; /* Oculta el desbordamiento */
+}
+
+/* Estilos comunes para los círculos */
+.circles li {
+    position: absolute; /* Posición absoluta */
+    display: block; /* Mostrar como bloque */
+    list-style: none; /* Sin viñetas */
+    width: 20px; /* Ancho predeterminado */
+    height: 20px; /* Alto predeterminado */
+    background: #ffffff; /* Color de fondo */
+    animation: animate 25s linear infinite; /* Animación con duración, temporización y repetición */
+    bottom: -150px; /* Inicialmente ubicado fuera de la ventana */
+}
+
+/* Círculos individuales */
+.circles li:nth-child(1) {
+    left: 25%; /* Posición */
+    width: 80px; /* Ancho */
+    height: 80px; /* Alto */
+    animation-delay: 0s; /* Retraso de la animación */
+}
+
+.circles li:nth-child(2) {
+    left: 10%; /* Posición */
+    width: 20px; /* Ancho */
+    height: 20px; /* Alto */
+    animation-delay: 2s; /* Retraso de la animación */
+    animation-duration: 12s; /* Duración de la animación */
+}
+
+.circles li:nth-child(3) {
+    left: 70%; /* Posición */
+    width: 20px; /* Ancho */
+    height: 20px; /* Alto */
+    animation-delay: 4s; /* Retraso de la animación */
+}
+
+.circles li:nth-child(4) {
+    left: 40%; /* Posición */
+    width: 60px; /* Ancho */
+    height: 60px; /* Alto */
+    animation-delay: 0s; /* Retraso de la animación */
+    animation-duration: 18s; /* Duración de la animación */
+}  
+
+.circles li:nth-child(5) {
+    left: 65%; /* Posición */
+    width: 20px; /* Ancho */
+    height: 20px; /* Alto */
+    animation-delay: 0s; /* Retraso de la animación */
+}  
+
+.circles li:nth-child(6) {
+    left: 75%; /* Posición */
+    width: 110px; /* Ancho */
+    height: 110px; /* Alto */
+    animation-delay: 3s; /* Retraso de la animación */
+}  
+
+.circles li:nth-child(7) {
+    left: 35%; /* Posición */
+    width: 150px; /* Ancho */
+    height: 150px; /* Alto */
+    animation-delay: 7s; /* Retraso de la animación */
+} 
+
+.circles li:nth-child(8) {
+    left: 50%; /* Posición */
+    width: 25px; /* Ancho */
+    height: 25px; /* Alto */
+    animation-delay: 15s; /* Retraso de la animación */
+    animation-duration: 45s; /* Duración de la animación */
+} 
+
+.circles li:nth-child(9) {
+    left: 20%; /* Posición */
+    width: 15px; /* Ancho */
+    height: 15px; /* Alto */
+    animation-delay: 2s; /* Retraso de la animación */
+    animation-duration: 35s; /* Duración de la animación */
+}  
+
+.circles li:nth-child(10) {
+    left: 85%; /* Posición */
+    width: 150px; /* Ancho */
+    height: 150px; /* Alto */
+    animation-delay: 0s; /* Retraso de la animación */
+    animation-duration: 11s; /* Duración de la animación */
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg); /* Posición inicial y rotación */
+        opacity: 1; /* Opacidad inicial */
+        border-radius: 0; /* Borde inicial */
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg); /* Posición y rotación final */
+        opacity: 0; /* Opacidad final */
+        border-radius: 50%; /* Borde final */
+    }
+}

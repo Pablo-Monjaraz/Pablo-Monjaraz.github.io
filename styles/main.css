@@ -1,0 +1,443 @@
+/* Estilos generales del contenedor principal */
+#main {
+  width: 100%;
+  max-width: 1600px;
+  padding: 0 250px; /* Ajustes del padding */
+  margin: 0 auto;
+}
+
+/* Presentación */
+#presentation {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos de la sección de saludo */
+.greeting_profile {
+  color: var(--color-1);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+/* Estilos del nombre */
+.name_profile {
+  text-transform: capitalize;
+  margin: 10px 0;
+  color: var(--text-color-1);
+}
+.name_profile h1 {
+  font-size: clamp(40px, 8vw, 100px);
+}
+
+/* Descripción del perfil */
+.description_profile {
+  width: 90%;
+  font-size: 1.1rem;
+  color: var(--text-color-2);
+}
+
+/* Estilos de la sección */
+.container_section {
+  font-size: 1.1rem;
+}
+
+/* Sección Acerca De */
+#acercaDe {
+  padding: 100px 0;
+}
+
+/* Contenedor de títulos de sección */
+.container_title_section {
+  padding-bottom: 15px;
+  color: var(--text-color-1);
+}
+/* Estilos del título de la sección */
+.text_title_section {
+  text-transform: capitalize;
+  font-size: 1.5em;
+  counter-increment: section 1;
+}
+
+/* Número de sección antes del título */
+.text_title_section::before {
+  content: "0" counter(section) ". ";
+  color: var(--color-1);
+  margin-right: 5px;
+}
+
+/* Línea decorativa después del título */
+.text_title_section::after {
+  content: "";
+  width: 250px;
+  height: 2px;
+  display: inline-block;
+  background-color: var(--color-1);
+  position: relative;
+  left: 10px;
+  bottom: 6px;
+}
+
+/* Contenedor de la descripción de la sección */
+.container_description_section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  color: var(--text-color-2);
+  line-height: var(--height-text);
+}
+
+/* Imagen con efecto */
+.img_effect {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  margin: 0 auto;
+}
+
+/* Efecto de superposición en la imagen */
+.img_effect::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: var(--color-2);
+  border-radius: var(--border-radius-1);
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.3s ease;
+}
+/* Estilo de superposición en la imagen */
+.img_effect::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 2px solid var(--color-1);
+  border-radius: var(--border-radius-1);
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: -1;
+  transition: 0.3s ease;
+}
+
+/* Cambio de estilo al pasar el ratón por encima */
+.img_effect:hover::before {
+  background-color: transparent;
+}
+.img_effect:hover::after {
+  left: 5px;
+  top: 5px;
+  background-color: var(--color-2);
+}
+
+/* Estilo para las imágenes */
+.img_effect img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--border-radius-1);
+}
+
+/* Estilo del texto de la sección */
+.text_section p {
+  margin-bottom: 10px;
+}
+
+/* Estilo de las listas no ordenadas */
+.text_section ul {
+  list-style: none;
+  margin: 5px 0px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Estilo de la lista de Acerca de */
+#acercaDe .text_section ul li::before {
+  content: "▹";
+  color: var(--color-1);
+  margin-left: 3px;
+}
+/* Sección de Experiencia */
+#experiencia {
+  padding: 150px 0px; /* Añade espacio alrededor de la sección */
+}
+
+#experiencia .container_description_section {
+  grid-template-columns: 1fr; /* Ajusta la disposición de las columnas */
+}
+
+#experiencia .text_section ul {
+  grid-template-columns: 1fr; /* Cambia el diseño de las columnas */
+}
+
+#experiencia .text_section ul li p {
+  display: flex;
+  line-height: var(--height-text);
+}
+
+#experiencia .text_section ul li p::before {
+  content: "▹"; /* Agrega el icono de viñeta */
+  color: var(--color-1);
+  padding: 0px 10px;
+  font-size: 1.5rem;
+}
+
+/* Sección de Trabajos */
+#trabajos {
+  padding: 100px 0; /* Añade espacio alrededor de la sección */
+}
+
+.conteiner_card_proyect {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Establece el diseño de las columnas */
+  margin-bottom: 50px; /* Añade espacio entre los elementos */
+}
+
+.img_effect_proyect {
+  width: 40vw;
+  height: 330px;
+  max-width: 650px;
+  max-height: 330px;
+  position: relative;
+}
+
+.img_effect_proyect::before {
+  content: ""; /* Crea un fondo en la imagen */
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: var(--color-2);
+  border-radius: var(--border-radius-1);
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.3s ease; /* Agrega una transición */
+}
+.img_effect_proyect:hover::before {
+  background-color: transparent; /* Al pasar el ratón, el color del fondo se vuelve transparente */
+}
+
+.img_effect_proyect img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta el tamaño de la imagen para que cubra */
+  object-position: center center; /* Centra la imagen */
+  border-radius: var(--border-radius-1); /* Establece el borde redondeado */
+}
+
+.description_card_proyect {
+  text-align: right; /* Alinea el texto a la derecha */
+}
+
+.text_proyect_import {
+  color: var(--color-1); /* Establece el color del texto */
+  letter-spacing: 0.1em; /* Añade un espaciado entre letras */
+}
+
+.name_card_proyect {
+  text-transform: uppercase; /* Convierte el texto en mayúsculas */
+  margin-top: 5px; /* Agrega espacio encima del texto */
+  margin-bottom: 10px; /* Agrega espacio debajo del texto */
+  color: var(--text-color-2); /* Establece el color del texto */
+}
+
+.information_card_proyect {
+  background-color: var(--color-1); /* Establece el fondo */
+  padding: 10px; /* Añade espacio interior */
+  border-radius: var(--border-radius-1); /* Establece el borde redondeado */
+  margin-bottom: 10px; /* Agrega espacio debajo del elemento */
+  transition: 0.3s ease-in-out; /* Añade una transición suave */
+  font-size: 0.95rem; /* Establece el tamaño de la fuente */
+}
+
+.information_card_proyect:hover {
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.75); /* Agrega una sombra al pasar el ratón */
+}
+
+.container_languages_programing ul {
+  list-style: none; /* Elimina los marcadores de lista */
+  display: flex; /* Alinea los elementos horizontalmente */
+  justify-content: right; /* Alinea los elementos a la derecha */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+  color: var(--text-color-2); /* Establece el color del texto */
+}
+
+.container_languages_programing ul li {
+  text-transform: uppercase; /* Convierte el texto en mayúsculas */
+  letter-spacing: 0.1em; /* Añade un espaciado entre letras */
+  font-size: 0.9rem; /* Establece el tamaño de la fuente */
+  margin: 0px 5px; /* Agrega espacio alrededor de cada elemento */
+}
+.container_links_proyect ul {
+  list-style: none; /* Elimina los marcadores de lista */
+  display: flex; /* Alinea los elementos horizontalmente */
+  justify-content: right; /* Alinea los elementos a la derecha */
+  margin: 5px 0; /* Agrega márgenes superior e inferior */
+}
+
+.container_links_proyect ul li {
+  margin: 5px; /* Añade márgenes alrededor de los elementos de la lista */
+}
+
+.container_links_proyect ul li a {
+  color: var(--color-3); /* Establece el color del enlace */
+  text-decoration: none; /* Elimina la subrayado del enlace */
+  transition: 0.3s ease; /* Añade una transición suave */
+  color: var(--text-color-2); /* (Error corregido) Establece el color del enlace */
+}
+
+.container_links_proyect ul li:hover a {
+  color: var(--color-1); /* Cambia el color del enlace al pasar el ratón */
+}
+
+.img_card_proyect {
+  position: relative; /* Establece la posición del elemento */
+}
+
+.description_card_proyect {
+  position: relative; /* Establece la posición del elemento */
+}
+
+.conteiner_card_proyect:nth-child(odd) .img_card_proyect {
+  left: 20px; /* Mueve la imagen a la izquierda para elementos impares */
+}
+
+.conteiner_card_proyect:nth-child(even) .img_card_proyect {
+  order: 1; /* Establece el orden de aparición del elemento */
+  left: -20px; /* Mueve la imagen a la izquierda para elementos pares */
+}
+
+.conteiner_card_proyect:nth-child(odd) .description_card_proyect {
+  left: -20px; /* Mueve la descripción a la izquierda para elementos impares */
+}
+
+.conteiner_card_proyect:nth-child(even) .description_card_proyect {
+  left: 20px; /* Mueve la descripción a la derecha para elementos pares */
+}
+
+.conteiner_card_proyect:nth-child(even) ul {
+  justify-content: left; /* Alinea a la izquierda la lista en elementos pares */
+}
+
+.conteiner_card_proyect:nth-child(even) .description_card_proyect {
+  text-align: left; /* Alinea el texto a la izquierda en elementos pares */
+}
+/* Sección "Más Proyectos" */
+.container_subtitle_cards {
+  width: 100%;
+  margin: 50px 0; /* Agrega márgenes superior e inferior */
+  font-weight: 700;
+  font-size: 1.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--text-color-1);
+}
+
+.container_cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.proyect_card {
+  height: 280px;
+  padding: 20px;
+  border: 1px solid var(--color-1);
+  border-radius: var(--border-radius-1);
+
+  position: relative;
+
+  transition: 0.3s ease;
+
+  color: var(--text-color-2);
+}
+
+.proyect_card:hover {
+  background-color: var(--color-4);
+  transform: translateY(-5px);
+}
+
+.container_top_icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.folder {
+  width: 60px;
+  height: 60px;
+  color: var(--color-1);
+}
+
+.icon_github {
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  transition: 0.3s ease;
+  color: var(--text-color-2); /* (Error corregido) Establece el color del enlace */
+}
+/* Cambios en la sección de Proyectos */
+.icon_github:hover {
+  color: var(--color-1); /* Cambia el color al pasar el mouse */
+}
+
+.card_name {
+  text-transform: capitalize;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  transition: 0.3s ease; /* Agrega transición al pasar el mouse */
+}
+
+.card_details {
+  font-size: 1rem;
+}
+
+.proyect_card:hover .card_name {
+  color: var(--color-1); /* Cambia el color al pasar el mouse */
+}
+
+/* Programación de las tarjetas de proyectos */
+.card_programings {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.card_programings ul {
+  list-style: none;
+  display: flex;
+}
+
+.card_programings ul li {
+  margin: 0 5px;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+}
+
+/* Sección de Contactos */
+#contactos {
+  padding: 150px 0;
+  text-align: center;
+}
+
+#contactos .text_title_section::after {
+  display: none; /* Oculta el pseudo elemento ::after */
+}
+
+#contactos .container_description_section {
+  grid-template-columns: 1fr;
+  width: 80%;
+  margin: 0 auto;
+  line-height: var(--height-text);
+}
+
+.gif_animado {
+  width: 250px;
+}

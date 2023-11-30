@@ -1,0 +1,67 @@
+/* Estilos del footer */
+.footer {
+    width: 100%; /* Ocupa el 100% del ancho del contenedor padre */
+    display: flex; /* Utiliza un modelo de caja flexible para los elementos internos */
+    align-items: center; /* Centra verticalmente los elementos internos */
+    flex-direction: column; /* Establece la dirección del flujo de los elementos como columna */
+}
+
+.container_links_footer {
+    padding: 10px 0; /* Añade espacio de relleno arriba y abajo */
+    display: none; /* Inicialmente oculto para ocultar los enlaces del footer */
+}
+
+.links_items_footer {
+    list-style: none; /* Elimina la lista de viñetas */
+    display: flex; /* Utiliza un modelo de caja flexible para los elementos de la lista de enlaces */
+}
+
+.links_items_footer li {
+    margin: 0px 15px; /* Añade margen a cada elemento de la lista de enlaces */
+}
+
+.links_items_footer li a {
+    text-decoration: none; /* Elimina la decoración de subrayado de los enlaces */
+    transition: .3s ease; /* Agrega una transición suave de 0.3 segundos */
+    color: var(--text-color-2); /* Color del texto predeterminado */
+    /* Los enlaces inicialmente tienen el color de texto predeterminado */
+}
+
+.links_items_footer li a:hover {
+    color: var(--color-1); /* Cambia el color al pasar el cursor para resaltar el enlace */
+    /* Los enlaces cambian al color definido por --color-1 al pasar el cursor */
+}
+
+.links_items_footer li a svg {
+    width: 35px; /* Establece el ancho de las imágenes SVG en 35 píxeles */
+    height: 35px; /* Establece la altura de las imágenes SVG en 35 píxeles */
+}
+
+.text_footer_author {
+    padding: 15px 0; /* Añade espacio de relleno arriba y abajo para el texto del autor */
+    transition: .3s ease; /* Agrega una transición suave de 0.3 segundos */
+    color: var(--text-color-2); /* Color del texto predeterminado */
+    /* El texto del autor inicialmente tiene el color de texto predeterminado */
+}
+
+.text_footer_author:hover {
+    color: var(--color-1); /* Cambia el color al pasar el cursor para resaltar el texto del autor */
+    /* El texto del autor cambia al color definido por --color-1 al pasar el cursor */
+}
+
+/* Estilos responsivos para dispositivos con un ancho de pantalla máximo de 768px (típicamente dispositivos móviles) */
+@media screen and (max-width: 768px) {
+    .container_links_footer {
+        display: flex; /* Muestra los enlaces cuando la pantalla es más pequeña */
+        flex-direction: column; /* Establece la dirección del flujo de los elementos como columna */
+    }
+
+    .links_items_footer {
+        justify-content: center; /* Centra los enlaces horizontalmente en pantallas más pequeñas */
+        text-align: center; /* Centra el texto de los enlaces horizontalmente en pantallas más pequeñas */
+    }
+
+    .links_items_footer li {
+        margin: 10px 0; /* Añade espacio entre cada elemento de la lista de enlaces */
+    }
+}
